@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:selectOneRadio id="kids" value="#{userInputBean.kids}" required= "true" requiredMessage="Wählen sie die Anzahl Kinder aus">
+            <f:selectItem itemLabel="Keine Kinder" itemValue="NoKids"/>
+            <f:selectItem itemLabel="Kinder" itemValue="Kids"/>
+        </h:selectOneRadio>    
+        
+            <h:selectOneRadio id="Weekdays" value="#{userInputBean.weekdays}" required= "true" requiredMessage="Wählen sie die Wochenzeit aus">
+            <f:selectItem itemLabel="Unter der Woche" itemValue="Week"/>
+            <f:selectItem itemLabel="Am Wochenende" itemValue="Weekend"/>
+            <f:selectItem itemLabel="Egal" itemValue="Doesnt't matter"/>
+        </h:selectOneRadio>  
+            
+            <h:selectOneRadio id="Weather" value="#{userInputBean.weather}" required= "true" requiredMessage="Wählen sie ein Wetter aus">
+            <f:selectItem itemLabel="Schönes Wetter" itemValue="good weather"/>
+            <f:selectItem itemLabel="schlechtes Wetter" itemValue="bad weather"/>
+            <f:selectItem itemLabel="Egal" itemValue="Doesnt't matter"/>
+        </h:selectOneRadio>
+            
+            <h:selectOneRadio id="Schooltime" value="#{userInputBean.schooltime}" required= "true" requiredMessage="Wählen sie die Schulzeit aus">
+            <f:selectItem itemLabel="Schulferien" itemValue="holidays"/>
+            <f:selectItem itemLabel="Schule" itemValue="school"/>
+            <f:selectItem itemLabel="Egal" itemValue="Doesnt't matter"/>
+        </h:selectOneRadio> 
+            
+            <h:selectOneRadio id="Time" value="#{userInputBean.time}" required= "true" requiredMessage="Wählen sie eine Zeit aus">
+            <f:selectItem itemLabel="Tagsüber" itemValue="during day"/>
+            <f:selectItem itemLabel="Abends" itemValue="at night"/>
+            <f:selectItem itemLabel="Egal" itemValue="Doesnt't matter"/>
+        </h:selectOneRadio> 
+            
+            <h:commandButton  value="Angebote" action="index.xhtml"/>
+       
+        </h:form>
+    
+        <br></br>
+             
+        <br></br>
+        <h:dataTable value="#{List.productList}" var="p">
+            <h:column>
+                <f:facet name="header">Aktivität</f:facet>
+                <h:outputText value="#{p.activity}"></h:outputText>
+            </h:column>
+        </h:dataTable>
+        
+        
+    </h:body>
+</html>
+
